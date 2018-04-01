@@ -1,0 +1,30 @@
+{
+  "name": "react-lighthouse-comparer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "neutrino build",
+    "start": "neutrino start",
+    "lint": "neutrino lint",
+    "test": "neutrino test",
+    "test:watch": "neutrino test --watch"
+  },
+  "dependencies": {
+    "i": "^0.3.6",
+    "lodash": "^4.17.5",
+    "material-ui": "^1.0.0-beta.39",
+    "npm": "^5.8.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^4.0.0",
+    "react-simple-file-input": "^2.1.0"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb": "^8.2.1",
+    "@neutrinojs/jest": "^8.2.1",
+    "@neutrinojs/react": "^8.2.1",
+    "neutrino": "^8.2.1"
+  }
+}
