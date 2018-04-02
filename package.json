@@ -11,6 +11,8 @@
     "test:watch": "neutrino test --watch"
   },
   "dependencies": {
+    "echarts": "^4.0.4",
+    "echarts-for-react": "^2.0.8",
     "i": "^0.3.6",
     "lodash": "^4.17.5",
     "material-ui": "^1.0.0-beta.39",

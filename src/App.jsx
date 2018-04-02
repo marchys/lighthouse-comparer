@@ -4,14 +4,22 @@ import Typography from 'material-ui/Typography';
 import AppBar from 'material-ui/AppBar';
 
 import Table from './ComparationTable';
+import ComparationChart from './ComparationChart';
 import Holder from './DragAndDropHolder';
+import calculateLighthouseScore from './calculateLighthouseScore';
 
 class App extends Component {
   state = {
     performanceData: [],
   };
 
-  handlePerformanceDataLoad = ({ data }) => this.setState({ performanceData: data });
+  handlePerformanceDataLoad = ({ data }) =>
+    this.setState({
+      performanceData: data.map(pagePerformance => ({
+        score: calculateLighthouseScore(pagePerformance),
+        ...pagePerformance,
+      })),
+    });
 
   render() {
     const { performanceData } = this.state;
@@ -25,6 +33,7 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Table performanceData={performanceData} />
+        <ComparationChart performanceData={performanceData} />
         <Holder onLoad={this.handlePerformanceDataLoad} />
       </div>
     );

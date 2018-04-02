@@ -3,8 +3,6 @@ import { withStyles } from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import calculateLighthouseScore from './calculateLighthouseScore';
-
 const styles = theme => ({
   root: {
     width: '100%',
@@ -18,10 +16,6 @@ const styles = theme => ({
 
 function ComparationTable(props) {
   const { classes, performanceData } = props;
-  const resultedData = performanceData.map(data => ({
-    score: calculateLighthouseScore(data),
-    ...data,
-  }));
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -37,7 +31,7 @@ function ComparationTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {resultedData.map(n => (
+          {performanceData.map(n => (
             <TableRow key={n.webPage}>
               <TableCell>{n.webPage}</TableCell>
               <TableCell>{n.score}</TableCell>
@@ -58,6 +52,7 @@ ComparationTable.propTypes = {
   classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   performanceData: PropTypes.arrayOf(PropTypes.shape({
     webPage: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
     firstMeaningfulPaint: PropTypes.number.isRequired,
     firstInteractive: PropTypes.number.isRequired,
     consistentlyInteractive: PropTypes.number.isRequired,
