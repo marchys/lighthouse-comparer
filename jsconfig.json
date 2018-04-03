@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "checkJs": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["*", "./src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
+
+

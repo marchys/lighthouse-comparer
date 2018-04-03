@@ -50,15 +50,17 @@ function ComparationTable(props) {
 
 ComparationTable.propTypes = {
   classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  performanceData: PropTypes.arrayOf(PropTypes.shape({
-    webPage: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
-    firstMeaningfulPaint: PropTypes.number.isRequired,
-    firstInteractive: PropTypes.number.isRequired,
-    consistentlyInteractive: PropTypes.number.isRequired,
-    speedIndexMetric: PropTypes.number.isRequired,
-    estimatedInputLatency: PropTypes.number.isRequired,
-  })),
+  performanceData: PropTypes.arrayOf(
+    PropTypes.shape({
+      webPage: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+      firstMeaningfulPaint: PropTypes.number.isRequired,
+      firstInteractive: PropTypes.number.isRequired,
+      consistentlyInteractive: PropTypes.number.isRequired,
+      speedIndexMetric: PropTypes.number.isRequired,
+      estimatedInputLatency: PropTypes.number.isRequired,
+    }),
+  ),
 };
 
 ComparationTable.defaultProps = {

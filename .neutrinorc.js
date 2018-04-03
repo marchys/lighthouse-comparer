@@ -6,6 +6,7 @@ module.exports = {
         eslint: {
           rules: {
             'arrow-parens': 'off',
+            'function-paren-newline': 'off',
           },
         },
       },
